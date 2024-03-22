@@ -1,0 +1,19 @@
+.banner-container {
+  width: 100%;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+}
+
+.banner-content {
+  text-align: center;
+}
+
+.banner-button {
+  margin-top: 20px;
+}
+.banner-button-green {
+  background-color: #008000;
+}

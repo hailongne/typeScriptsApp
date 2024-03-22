@@ -1,9 +1,13 @@
+/* style.css */
+
+/* Thiết lập các quy tắc CSS cho tất cả các phần tử */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+/* Thiết lập các quy tắc CSS cho HTML */
 html {
   font-size: 16px;
   font-weight: 400;
@@ -11,17 +15,14 @@ html {
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   background-color: #f5f5f5;
   color: #333;
   line-height: 1.6;
 }
-
-ol,
-ul,
-li {
-  list-style: none;
-}
-
 button {
   cursor: pointer;
   border: 1px solid transparent;
