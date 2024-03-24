@@ -1,16 +1,22 @@
 import Banner from '@/components/Banner/Banner'
+import BannerFooter from '@/components/Banner/BannerFooter'
 import Footer from '@/components/Footer/Footer'
 import { Header } from '@/components/Header/Header'
-import ProductList from '@/components/ProductList/ProductList'
+import ProductHome from '@/components/ProductHome/ProductHome'
 
-type Props = {}
-const Home = (props: Props) => {
+const Home = () => {
   return (
     <div>
       <Header />
       <Banner />
-      <h2>Danh sach san pham:</h2>
-      <ProductList />
+      <br />
+      <div className='d-flex justify-content-center'>
+        <h1>Các Sản Phẩm Của Chúng Tôi</h1>
+      </div>
+      <br />
+      <ProductHome />
+      <br />
+      <BannerFooter />
       <Footer />
     </div>
   )

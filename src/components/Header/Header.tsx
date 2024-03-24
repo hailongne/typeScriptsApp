@@ -1,7 +1,5 @@
 import { NavLink } from 'react-router-dom'
 
-import style from './custom-bootstrap.css'
-
 export const Header = () => {
   return (
     <nav className='navbar navbar-expand-lg bg-body-tertiary'>
@@ -27,10 +25,20 @@ export const Header = () => {
               </NavLink>
             </li>
           </ul>
+
           <form className='d-flex' role='search'>
-            <button className='btn btn-outline-success' type='submit'>
-              <NavLink to='/login'>Login</NavLink>
-            </button>
+            <form className='container-fluid justify-content-start'>
+              <NavLink to='/shop/:id'>
+                <button className='btn btn-outline-success me-2' type='button'>
+                  Shopping
+                </button>
+              </NavLink>
+              <NavLink to='/login'>
+                <button className='btn btn-outline-success me-2' type='button'>
+                  Login
+                </button>
+              </NavLink>
+            </form>
           </form>
         </div>
       </div>

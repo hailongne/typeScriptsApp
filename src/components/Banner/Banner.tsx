@@ -1,15 +1,20 @@
-import React from 'react'
-import pikbestImage from '@/assets/banner.jpg'
-import style from './Banner.module.css'
+import Banner1 from '@/assets/banner1.png'
+import Banner2 from '@/assets/banner2.png'
+import Banner3 from '@/assets/banner3.png'
 
 const Banner = () => {
   return (
-    <div className={`banner-container ${style.bannerContainer}`}>
-      <img src={pikbestImage} alt='Pikbest Image' className={`img-fluid ${style.bannerImage}`} />
-      <div className={`banner text-center ${style.bannerContent}`}>
-        <h1 className='display-4'>Tea Sale!</h1>
-        <p className='lead'>Enjoy our premium tea collection</p>
-        <button className={` ${style.bannerButton} ${style['banner-button-green']}`}>Shop Now</button>
+    <div id='carouselExampleSlidesOnly' className='carousel slide' data-bs-ride='carousel'>
+      <div className='carousel-inner'>
+        <div className='carousel-item active'>
+          <img src={Banner1} className='d-block w-100' alt='...' />
+        </div>
+        <div className='carousel-item'>
+          <img src={Banner2} className='d-block w-100' alt='...' />
+        </div>
+        <div className='carousel-item'>
+          <img src={Banner3} className='d-block w-100' alt='...' />
+        </div>
       </div>
     </div>
   )
