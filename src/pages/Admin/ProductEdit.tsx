@@ -13,7 +13,7 @@ const schemaProduct = Joi.object({
   description: Joi.string().allow('')
 })
 
-const ProductAdd = ({ onAdd }: Props) => {
+const ProductEdit = ({ onAdd }: Props) => {
   const {
     register,
     handleSubmit,
@@ -68,4 +68,4 @@ const ProductAdd = ({ onAdd }: Props) => {
   )
 }
 
-export default ProductAdd
+export default ProductEdit

@@ -1,37 +1,37 @@
 import Footer from './components/Footer/Footer'
 import { Header } from './components/Header/Header'
 import Home from './pages/Home'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 import NotFound from './pages/NotFound'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import ProductDetail from './pages/ProductDetail'
+import Dashboard from './pages/Admin/Dashboard'
 import ProductAdd from './pages/Admin/ProductAdd'
 import { useEffect, useState } from 'react'
 import { TProduct } from './interfaces/TProduct'
 import instance from './apis'
-import Dashboard from './pages/Admin/Dashboard'
+import { createProduct, getProducts } from './apis/product'
 import ProductAll from './pages/ProductHome/ProductAll'
 
 function App() {
   const [products, setProducts] = useState<TProduct[]>([])
+  const navigate = useNavigate()
   useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const { data } = await instance.get('/products')
-        console.log(data)
-        setProducts(data)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    getProducts()
+    ;(async () => {
+      const data = await getProducts()
+      setProducts(data)
+    })()
   }, [])
-
+  console.log(products)
   const handleAdd = (product: TProduct) => {
-    console.log(product)
+    ;(async () => {
+      const data = await createProduct(product)
+      // setProducts((prev) => [...prev, data])
+      setProducts([...products, data])
+      navigate('/admin')
+    })()
   }
-
   return (
     <>
       <Header />
