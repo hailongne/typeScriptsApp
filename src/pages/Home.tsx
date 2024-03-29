@@ -1,13 +1,10 @@
 import Banner from '@/components/Banner/Banner'
 import BannerFooter from '@/components/Banner/BannerFooter'
-import Footer from '@/components/Footer/Footer'
-import { Header } from '@/components/Header/Header'
-import ProductHome from '@/components/ProductHome/ProductHome'
+import ProductHome from '@/pages/ProductHome/ProductHome'
 
 const Home = () => {
   return (
     <div>
-      <Header />
       <Banner />
       <br />
       <div className='d-flex justify-content-center'>
@@ -17,7 +14,6 @@ const Home = () => {
       <ProductHome />
       <br />
       <BannerFooter />
-      <Footer />
     </div>
   )
 }

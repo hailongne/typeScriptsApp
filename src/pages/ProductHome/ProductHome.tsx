@@ -14,7 +14,7 @@ const ProductHome = () => {
               <div className='card-body'>
                 <h6 className='card-title'>Trà Nguyên Lá WAO</h6>
                 <p className='card-text'>Trà nguyên lá "1 búp 2 lá non" từ xưởng trà WAO tại Bảo Lộc.</p>
-                <a href='/tranguyenlawao' className='btn btn-primary'>
+                <a href='/productall' className='btn btn-primary'>
                   BUY NOW
                 </a>
               </div>
@@ -27,7 +27,7 @@ const ProductHome = () => {
               <div className='card-body'>
                 <h6 className='card-title'>Soulful WAO Tea</h6>
                 <p className='card-text'>Dòng trà hoa với vị trà đậm đà và hương thơm hiện đại. </p>
-                <a href='/tranguyenlawao' className='btn btn-primary'>
+                <a href='/productall' className='btn btn-primary'>
                   BUY NOW
                 </a>
               </div>
@@ -40,7 +40,7 @@ const ProductHome = () => {
               <div className='card-body'>
                 <h6 className='card-title'>Bột Pha Chế</h6>
                 <p className='card-text'>Đa năng, đáp ứng tất cả nhu cầu: trà sữa Việt Nam, trà sữa Đài Loan.</p>
-                <a href='/tranguyenlawao' className='btn btn-primary'>
+                <a href='/productall' className='btn btn-primary'>
                   BUY NOW
                 </a>
               </div>
@@ -53,7 +53,7 @@ const ProductHome = () => {
               <div className='card-body'>
                 <h6 className='card-title'>Mứt Thái Lan ShaveIcePlus</h6>
                 <p className='card-text'>Mứt trái cây sản xuất tại Thái Lan với vị trái cây tự nhiên.</p>
-                <a href='/mutthailan' className='btn btn-primary'>
+                <a href='/productall' className='btn btn-primary'>
                   BUY NOW
                 </a>
               </div>

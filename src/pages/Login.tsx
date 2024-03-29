@@ -1,13 +1,7 @@
-import { Header } from '@/components/Header/Header'
-import React from 'react'
-
-type Props = {}
-
-const Login = (props: Props) => {
+const Login = () => {
   return (
     <>
       <div>
-        <Header />
         <h1>Login</h1>
         <div className='mb-3'>
           <label htmlFor='exampleInputEmail1' className='form-label'>
