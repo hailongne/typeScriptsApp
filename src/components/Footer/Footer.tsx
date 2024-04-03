@@ -1,9 +1,6 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-type Props = {}
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
     <>
       <div className='card text-center'>

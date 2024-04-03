@@ -8,7 +8,7 @@ const Home = () => {
       <Banner />
       <br />
       <div className='d-flex justify-content-center'>
-        <h1>Các Sản Phẩm Của Chúng Tôi</h1>
+        <h1>Các Sản Phẩm WAO</h1>
       </div>
       <br />
       <ProductHome />

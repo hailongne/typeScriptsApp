@@ -1,3 +1,4 @@
+import './App.css'
 import Footer from './components/Footer/Footer'
 import { Header } from './components/Header/Header'
 import Home from './pages/Home'
@@ -12,6 +13,7 @@ import { useEffect, useState } from 'react'
 import { TProduct } from './interfaces/TProduct'
 import instance from './apis'
 import { createProduct, getProducts } from './apis/product'
+import ProductEdit from './pages/Admin/ProductEdit'
 import ProductAll from './pages/ProductHome/ProductAll'
 
 function App() {
@@ -27,31 +29,42 @@ function App() {
   const handleAdd = (product: TProduct) => {
     ;(async () => {
       const data = await createProduct(product)
-      // setProducts((prev) => [...prev, data])
       setProducts([...products, data])
+      navigate('/admin')
+    })()
+  }
+
+  const handleEdit = (product: TProduct) => {
+    ;(async () => {
+      const { data } = await instance.put(`/products/${product.id}`, product)
+      setProducts(products.map((item) => (item.id === data.id ? data : item)))
       navigate('/admin')
     })()
   }
   return (
     <>
       <Header />
-      <Routes>
-        {/* client */}
-        <Route path='/'>
-          <Route index element={<Home />} />
-          <Route path='/shop/:id' element={<ProductDetail />} />
-          <Route path='/productall' element={<ProductAll products={products} />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-        </Route>
-        {/* admin */}
-        <Route path='/admin'>
-          <Route index element={<Dashboard products={products} />} />
-          <Route path='/admin/add' element={<ProductAdd onAdd={handleAdd} />} />
-        </Route>
-        {/* not found */}
-        <Route path='*' element={<NotFound />} />
-      </Routes>
+      <main className='container main'>
+        <Routes>
+          {/* client */}
+          <Route path='/'>
+            <Route index element={<Home />} />
+            <Route path='/productall' element={<ProductAll products={products} />} />
+            <Route path='/shop/:id' element={<ProductDetail />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+          </Route>
+          {/* admin */}
+          <Route path='/admin'>
+            <Route index element={<Dashboard products={products} />} />
+            <Route path='/admin/add' element={<ProductAdd onAdd={handleAdd} />} />
+            <Route path='/admin/edit/:id' element={<ProductEdit onEdit={handleEdit} />} />
+          </Route>
+          {/* not found */}
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </main>
+
       <Footer />
     </>
   )
