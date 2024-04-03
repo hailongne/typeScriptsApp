@@ -2,13 +2,11 @@ import { TProduct } from '@/interfaces/TProduct'
 import { Link } from 'react-router-dom'
 
 type Props = {
-  products: TProduct[] // Đảm bảo rằng products là một mảng của các sản phẩm
+  products: TProduct[]
 }
 
 const Dashboard = ({ products }: Props) => {
-  // Kiểm tra nếu products không tồn tại hoặc không phải là một mảng
   if (!products || !Array.isArray(products)) {
-    // Khởi tạo một giá trị mặc định cho products là một mảng trống
     products = []
   }
 
